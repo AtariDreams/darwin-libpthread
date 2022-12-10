@@ -221,7 +221,7 @@ pthread_sigmask(int how, const sigset_t * set, sigset_t * oset)
 {
 	int err = 0;
 
-	if (__pthread_sigmask(how, set, oset) == -1) {
+	if (__pthread_sigmask(how, set, oset)) {
 		err = errno;
 	}
 	return(err);
